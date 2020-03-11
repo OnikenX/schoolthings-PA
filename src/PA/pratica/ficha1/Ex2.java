@@ -18,7 +18,6 @@ public class Ex2 {
 
         } while (certo == 0);
         System.out.println("Demorou " + tentativas + " tentativas, para obter o número " + palpite + ".");
-
     }
 
 }
