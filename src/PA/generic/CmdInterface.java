@@ -15,7 +15,8 @@ public class CmdInterface {
         Scanner sc = new Scanner(System.in);
 
         //string com o sim e nao corretamente capitalizados
-        String sn;
+        //cache para cachar a linha
+        String sn, cache;
 
         //vezes pedidas informação, necessario para não se ter um loop infinito
         int times = 0;
@@ -54,7 +55,7 @@ public class CmdInterface {
             //limpa tudo anteriormente escrito
             System.out.println(ask + sn);
             try {
-                sn = sc.nextLine();
+                cache = sc.nextLine();
             } catch (NoSuchElementException e) {
                 System.out.println("Porfavor insira s ou n");
                 continue;
@@ -62,10 +63,9 @@ public class CmdInterface {
                 System.out.println("Output fechado.");
                 break;
             }
-            if (sn.length() != 0)
+            if (cache.length() != 0)
                 try {
-
-                    input = sn.charAt(0);
+                    input = cache.charAt(0);
                 } catch (Exception e) {
                     System.out.println("Não consigo buscar o primeiro caracter do input.");
                     break;
@@ -88,8 +88,7 @@ public class CmdInterface {
                     break;
                 default:
                     System.out.println("[input =" + input + "]S ou N please.");
-            }
-            ;
+            };
 
         } while (times < 20);
 
@@ -97,4 +96,6 @@ public class CmdInterface {
         System.out.println("Demasiadas tentativas. A enviar excepção...");
         throw new Error("Demasiadas tentativas.");
     }
+
+
 }

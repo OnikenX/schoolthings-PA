@@ -14,7 +14,11 @@ public class Ex2 {
             if (PA.generic.CmdInterface.yesno("[Tentativa nº" + ++tentativas + "]O valor que pensas-te foi " + palpite + "?", 'n')) {
                 break;
             }
-            if (PA.generic.CmdInterface.yesno("O valor que pensas-te é inferiror a " + palpite + "?", 'Y'));
+            if (PA.generic.CmdInterface.yesno("É inferiror a " + palpite + "?", 'n')){
+                menorque = palpite;
+            }else{
+                maiorque = palpite;
+            }
 
         } while (certo == 0);
         System.out.println("Demorou " + tentativas + " tentativas, para obter o número " + palpite + ".");

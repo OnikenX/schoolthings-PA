@@ -1,17 +1,26 @@
 package PA;
 
 import java.awt.*;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
+
+
         boolean returned = false;
         try {
-            returned = PA.generic.CmdInterface.yesno("test?", 'n');
+            PA.pratica.ficha1.Ex3.ex();
         }catch(Exception e) {
             System.out.println("Problema desconhecido encontrado. A terminar o programa.");
+            return;
         }
-        System.out.println(returned);
+        //System.out.println(returned);
     }
+    private static int choiceSystem(){
+        int returnable = 0;
+
+
+        return returnable;
+    };
 }
