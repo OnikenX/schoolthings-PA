@@ -17,6 +17,7 @@ public class Ex3 {
             System.out.println("\t["+i+1+"]="+numeros[i]);
     }
 
+    //getInts
     private static int getInt(){
         return getInt(false, 0);
     }
@@ -28,7 +29,7 @@ public class Ex3 {
     private static int getInt(boolean verify, int min){
         Scanner sc = new Scanner(System.in);
         int number = 0;
-
+        int loopdetector = 0;
         do{
             try{
                 number = sc.nextInt();
@@ -36,6 +37,7 @@ public class Ex3 {
                 System.out.println("Digite um número please.[error handling incomplete]");
                 continue;
             }
+
         }while(number >= min);
         return number;
     }
